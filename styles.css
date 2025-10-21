@@ -1,49 +1,90 @@
-body {
-  margin: 0;
+* { box-sizing: border-box; }
+:root{
+  --brand:#111;
+  --accent:#ff7a59;
+  --bg:#ffffff;
+  --muted:#f2f2f2;
+}
+body{
+  margin:0;
   font-family: Arial, sans-serif;
-  background: linear-gradient(to bottom, #87ceeb, #fffacd);
-  color: #333;
+  background: var(--bg);
+  color:#333;
+  line-height:1.5;
 }
-h1 {
-  text-align: center;
-  padding: 20px;
-  margin: 0;
-  font-size: 2em;
+.container{ width:min(1100px, 92%); margin:0 auto; }
+
+/* תפריט דביק עם רקע שקוף */
+.topbar{
+  position:fixed; top:0; width:100%; z-index:50;
+  background:rgba(255,255,255,0.85);
+  backdrop-filter: blur(10px);
+  border-bottom:1px solid #eee;
 }
-.carousel {
-  display: flex;
-  overflow-x: scroll;
-  scroll-snap-type: x mandatory;
-  padding: 20px;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
+.nav{
+  display:flex; align-items:center; justify-content:space-between;
+  padding:10px 0;
 }
-.carousel::-webkit-scrollbar { display: none; }
-.carousel-item {
-  flex: 0 0 auto;
-  width: 80%;
-  scroll-snap-align: center;
-  background: #fff;
-  border: 2px solid #eee;
-  border-radius: 8px;
-  margin: 0 10px;
-  text-align: center;
-  padding: 15px;
+.brand{ display:flex; align-items:center; font-weight:800; color:var(--brand); }
+.logo{
+  width:36px; height:36px; margin-left:8px; border-radius:50%;
 }
-.carousel-item img {
-  max-width: 100%;
-  border-radius: 4px;
+nav .nav-link{
+  margin-inline:10px; text-decoration:none; color:#444; font-weight:600;
+  transition:color .3s ease;
 }
-.btn {
-  display: inline-block;
-  padding: 8px 12px;
-  margin: 5px 5px 0;
-  text-decoration: none;
-  border-radius: 5px;
-  color: #fff;
-  font-weight: bold;
+nav .nav-link:hover, .nav-link.active{ color:var(--accent); }
+
+/* אזור וידאו */
+.hero{ padding:90px 0 24px; }
+.video-wrap{
+  position:relative; width:100%;
+  aspect-ratio:16/9;
+  background: var(--muted);
+  border-radius:14px; overflow:hidden;
+  box-shadow:0 10px 30px rgba(0,0,0,.06);
 }
-.paypal-btn { background: #0070ba; }
-.stripe-btn { background: #635bff; }
-.btn:hover { opacity: 0.8; }
-@media (min-width: 800px) { .carousel-item { width: 60%; } }
+.hero-video{ width:100%; height:100%; object-fit:cover; display:block; }
+.hero-title{ margin:18px 0 6px; font-size:clamp(22px, 3.2vw, 40px); text-align:center; }
+.hero-sub{ margin:0; text-align:center; color:#666; }
+
+/* קטלוג */
+.catalog-section{ padding:24px 0 40px; }
+.carousel{
+  display:flex; overflow-x:auto; scroll-snap-type:x mandatory;
+  gap:14px; padding:10px 2px 6px;
+  -ms-overflow-style:none; scrollbar-width:none;
+}
+.carousel::-webkit-scrollbar{ display:none; }
+.carousel-item{
+  flex:0 0 auto; width:82%;
+  scroll-snap-align:center;
+  background:#fff; border:1px solid #eee; border-radius:12px;
+  padding:14px; text-align:center;
+  box-shadow:0 6px 16px rgba(0,0,0,.05);
+}
+.carousel-item img{ max-width:100%; border-radius:8px; }
+.carousel-item h3{ margin:10px 0 6px; font-size:1.05rem; }
+.carousel-item p{ margin:0 0 10px; font-weight:700; }
+
+/* כפתורים */
+.btn{
+  display:inline-block; padding:8px 12px; border-radius:8px;
+  color:#fff; text-decoration:none; font-weight:700; margin:4px;
+}
+.btn:hover{ opacity:.9; }
+.primary{ background:var(--accent); }
+.paypal-btn{ background:#0070ba; }
+.stripe-btn{ background:#635bff; }
+
+.contact-section{ padding:18px 0 40px; }
+.contact-form{
+  display:grid; gap:10px; grid-template-columns:1fr; max-width:520px;
+}
+.contact-form input, .contact-form textarea{
+  padding:10px 12px; border:1px solid #ddd; border-radius:8px; font-size:1rem;
+}
+.footer{ border-top:1px solid #eee; padding:18px 0; color:#666; font-size:.95rem; }
+@media (min-width: 800px){
+  .carousel-item{ width:58%; }
+}

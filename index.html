@@ -1,18 +1,65 @@
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>קטלוג קיץ</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <header>
-      <h1>מוצרי קיץ לחופש מושלם</h1>
-    </header>
-    <main>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TraguStyle — חנות קיץ</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body id="home">
+
+  <!-- תפריט עליון עם לוגו -->
+  <header class="topbar">
+    <div class="container nav">
+      <div class="brand">
+        <img src="images/logo.png" alt="TraguStyle Logo" class="logo"/>
+        TraguStyle
+      </div>
+      <nav>
+        <a href="#home" class="nav-link">בית</a>
+        <a href="#catalog" class="nav-link">קטלוג</a>
+        <a href="#contact" class="nav-link">צרו קשר</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- אזור וידאו -->
+  <section class="hero">
+    <div class="container">
+      <div class="video-wrap">
+        <video class="hero-video" src="videos/banner.mp4" autoplay muted loop playsinline></video>
+      </div>
+      <h1 class="hero-title">קולקציית הקיץ שלך כאן</h1>
+      <p class="hero-sub">סטייל קליל, משלוח מהיר, תשלום מאובטח</p>
+    </div>
+  </section>
+
+  <!-- קטלוג -->
+  <section id="catalog" class="catalog-section">
+    <div class="container">
+      <h2>קטלוג</h2>
       <div id="product-carousel" class="carousel"></div>
-    </main>
-    <script src="script.js"></script>
-  </body>
+    </div>
+  </section>
+
+  <!-- צור קשר -->
+  <section id="contact" class="contact-section">
+    <div class="container">
+      <h2>צרו קשר</h2>
+      <form class="contact-form" onsubmit="event.preventDefault(); alert('נשלח! (דמו)');">
+        <input type="text" placeholder="שם מלא" required/>
+        <input type="email" placeholder="אימייל" required/>
+        <textarea rows="4" placeholder="הודעה"></textarea>
+        <button type="submit" class="btn primary">שליחה</button>
+      </form>
+      <p class="contact-note">אפשר גם במייל: <a href="mailto:hello@tragustyle.com">hello@tragustyle.com</a></p>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">© TraguStyle • כל הזכויות שמורות</div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
 </html>

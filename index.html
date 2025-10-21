@@ -2,77 +2,40 @@
 <html lang="he" dir="rtl">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>TraguStyle — חנות קיץ</title>
-  <link rel="stylesheet" href="styles.css"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TraguStyle</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
-<body id="home">
+<body>
 
-  <!-- תפריט עליון -->
-  <header class="topbar">
-    <div class="container nav">
-      <div class="brand">
-        <span class="store-name">TraguStyle</span>
-      </div>
+  <!-- פוסטר יופיע מייד עד שהווידאו נטען -->
+  <img src="images/video-cover.jpg" alt="" class="bg-poster" />
 
-      <div class="logo-center">
-        <img src="images/logo.png" alt="TraguStyle Logo" class="logo"/>
-      </div>
+  <!-- וידאו רקע מלא -->
+  <video class="bg-video" autoplay muted loop playsinline preload="auto" poster="images/video-cover.jpg">
+    <source src="videos/banner.mp4" type="video/mp4" />
+    <!-- אופציונלי: אם יש גם WEBM
+    <source src="videos/banner.webm" type="video/webm" />
+    -->
+  </video>
 
-      <nav>
-        <a href="#home" class="nav-link">בית</a>
-        <a href="#catalog" class="nav-link">קטלוג</a>
-        <a href="#about" class="nav-link">קצת עלינו</a>
-        <a href="#contact" class="nav-link">צרו קשר</a>
-      </nav>
-    </div>
-  </header>
-
-  <!-- אזור רקע וידאו -->
-  <section class="hero">
-    <video class="background-video" src="videos/banner.mp4" autoplay muted loop playsinline></video>
-    <div class="overlay">
-      <div class="hero-content">
-        <h1 class="hero-title">קולקציית הקיץ שלך כאן</h1>
-        <p class="hero-sub">סטייל קליל • משלוח מהיר • תשלום מאובטח</p>
+  <!-- שכבת תוכן מרכזית -->
+  <div class="overlay">
+    <div class="center-content">
+      <img src="images/logo.png" alt="TraguStyle Logo" class="logo" />
+      <h1 class="title">TraguStyle</h1>
+      <div class="buttons">
+        <a href="#home" class="btn">בית</a>
+        <a href="#catalog" class="btn">קטלוג</a>
+        <a href="#about" class="btn">קצת עלינו</a>
+        <a href="#contact" class="btn">צרו קשר</a>
       </div>
     </div>
-  </section>
+  </div>
 
-  <!-- קצת עלינו -->
-  <section id="about" class="about-section">
-    <div class="container">
-      <h2>קצת עלינו</h2>
-      <p>TraguStyle היא חנות אופנה ישראלית עם השראה ים־תיכונית וסטייל צעיר. אנחנו מביאים בגדים ונעליים איכותיים בקו עיצובי ייחודי, עם שילוב של נוחות ואלגנטיות. כל עונה אנחנו יוצרים קולקציות חדשות שמתאימות בדיוק למזג האוויר, לאווירה ולסגנון שלך.</p>
-    </div>
-  </section>
-
-  <!-- קטלוג -->
-  <section id="catalog" class="catalog-section">
-    <div class="container">
-      <h2>קטלוג</h2>
-      <div id="product-carousel" class="carousel"></div>
-    </div>
-  </section>
-
-  <!-- צור קשר -->
-  <section id="contact" class="contact-section">
-    <div class="container">
-      <h2>צרו קשר</h2>
-      <form class="contact-form" onsubmit="event.preventDefault(); alert('נשלח! (דמו)');">
-        <input type="text" placeholder="שם מלא" required/>
-        <input type="email" placeholder="אימייל" required/>
-        <textarea rows="4" placeholder="הודעה"></textarea>
-        <button type="submit" class="btn primary">שליחה</button>
-      </form>
-      <p class="contact-note">אפשר גם במייל: <a href="mailto:hello@tragustyle.com">hello@tragustyle.com</a></p>
-    </div>
-  </section>
-
-  <footer class="footer">
-    <div class="container">© TraguStyle • כל הזכויות שמורות</div>
-  </footer>
-
-  <script src="script.js"></script>
+  <main id="home"></main>
+  <section id="catalog"></section>
+  <section id="about"></section>
+  <section id="contact"></section>
 </body>
 </html>

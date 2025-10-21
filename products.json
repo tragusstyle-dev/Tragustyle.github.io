@@ -1,18 +1,29 @@
 [
   {
     "id": 1,
-    "name": "משקפי שמש קיץ",
-    "price": 100,
-    "image": "sunglasses.jpg",
+    "name": "חולצת חוף לבנה",
+    "price": 129,
+    "image": "beach-shirt.jpg",
+    "description": "חולצת כותנה קלה ונעימה לקיץ.",
     "paypalLink": "https://www.paypal.com/checkoutnow?token=EXAMPLE1",
     "stripeLink": "https://buy.stripe.com/test_XXXXXX"
   },
   {
     "id": 2,
-    "name": "כובע חוף טרופי",
-    "price": 75,
-    "image": "sunhat.jpg",
+    "name": "כובע רחב שוליים",
+    "price": 79,
+    "image": "sun-hat.jpg",
+    "description": "הגנה מעולה מהשמש בסטייל.",
     "paypalLink": "https://www.paypal.com/checkoutnow?token=EXAMPLE2",
     "stripeLink": "https://buy.stripe.com/test_YYYYYY"
+  },
+  {
+    "id": 3,
+    "name": "משקפי שמש קלאסיות",
+    "price": 149,
+    "image": "sunglasses.jpg",
+    "description": "UV400, מסגרת קלה.",
+    "paypalLink": "",
+    "stripeLink": "https://buy.stripe.com/test_ZZZZZZ"
   }
 ]

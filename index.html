@@ -1,41 +1,39 @@
-<!DOCTYPE html>
-<html lang="he" dir="rtl">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TraguStyle</title>
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;overflow:hidden;font-family:Arial,Helvetica,sans-serif}
 
-  <!-- פוסטר יופיע מייד עד שהווידאו נטען -->
-  <img src="images/video-cover.jpg" alt="" class="bg-poster" />
+/* פוסטר (תמונה) – נראה מייד, נעלם כשוידאו נטען מעליו */
+.bg-poster{
+  position:fixed; inset:0; width:100%; height:100%;
+  object-fit:cover; z-index:-2; filter:brightness(.77);
+}
 
-  <!-- וידאו רקע מלא -->
-  <video class="bg-video" autoplay muted loop playsinline preload="auto" poster="images/video-cover.jpg">
-    <source src="videos/banner.mp4" type="video/mp4" />
-    <!-- אופציונלי: אם יש גם WEBM
-    <source src="videos/banner.webm" type="video/webm" />
-    -->
-  </video>
+.bg-video{
+  position:fixed; inset:0;
+  min-width:100%; min-height:100%;
+  width:auto; height:auto; object-fit:cover;
+  z-index:-1; pointer-events:none; filter:brightness(.77);
+}
 
-  <!-- שכבת תוכן מרכזית -->
-  <div class="overlay">
-    <div class="center-content">
-      <img src="images/logo.png" alt="TraguStyle Logo" class="logo" />
-      <h1 class="title">TraguStyle</h1>
-      <div class="buttons">
-        <a href="#home" class="btn">בית</a>
-        <a href="#catalog" class="btn">קטלוג</a>
-        <a href="#about" class="btn">קצת עלינו</a>
-        <a href="#contact" class="btn">צרו קשר</a>
-      </div>
-    </div>
-  </div>
+.overlay{
+  position:relative; width:100%; height:100%;
+  display:flex; justify-content:center; align-items:center; text-align:center;
+}
 
-  <main id="home"></main>
-  <section id="catalog"></section>
-  <section id="about"></section>
-  <section id="contact"></section>
-</body>
-</html>
+.center-content{color:#fff; text-shadow:0 2px 10px rgba(0,0,0,.6); animation:fadeIn 1.2s ease}
+.logo{width:110px; height:110px; border-radius:50%; margin-bottom:14px}
+.title{font-size:3rem; font-weight:900; margin-bottom:16px; letter-spacing:.8px}
+
+.buttons{display:flex; flex-direction:column; gap:12px; align-items:center}
+.btn{
+  display:inline-block; background:rgba(255,255,255,.18); color:#fff;
+  padding:10px 28px; border-radius:28px; text-decoration:none; font-weight:700; font-size:1.05rem;
+  backdrop-filter:blur(4px); transition:transform .2s ease, background .2s ease
+}
+.btn:hover{background:rgba(255,255,255,.36); transform:scale(1.05)}
+
+@keyframes fadeIn{from{opacity:0; transform:translateY(12px)} to{opacity:1; transform:translateY(0)}}
+
+@media (max-width:600px){
+  .title{font-size:2.2rem}
+  .btn{font-size:1rem; padding:8px 22px}
+}

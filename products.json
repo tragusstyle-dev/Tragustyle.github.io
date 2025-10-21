@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "name": "משקפי שמש קיץ",
+    "price": 100,
+    "image": "sunglasses.jpg",
+    "paypalLink": "https://www.paypal.com/checkoutnow?token=EXAMPLE1",
+    "stripeLink": "https://buy.stripe.com/test_XXXXXX"
+  },
+  {
+    "id": 2,
+    "name": "כובע חוף טרופי",
+    "price": 75,
+    "image": "sunhat.jpg",
+    "paypalLink": "https://www.paypal.com/checkoutnow?token=EXAMPLE2",
+    "stripeLink": "https://buy.stripe.com/test_YYYYYY"
+  }
+]
